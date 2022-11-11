@@ -14,9 +14,9 @@ class SimplefeedbackServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'mrlinnth');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'mrlinnth');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'mrlinnth');
         // $this->loadViewComponentsAs('mrlinnth', [Alert::class]);
-        // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -35,7 +35,7 @@ class SimplefeedbackServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('simplefeedback', function ($app) {
-            return new Simplefeedback;
+            return new Simplefeedback();
         });
     }
 
@@ -77,7 +77,7 @@ class SimplefeedbackServiceProvider extends ServiceProvider
         // Publishing view components.
         // $this->publishes([
         //     __DIR__.'/../src/Components/' => app_path('View/Components'),
-        // ], 'simplefeedback.view-components');        
+        // ], 'simplefeedback.view-components');
 
         // Publishing assets.
         /*$this->publishes([
