@@ -59,15 +59,15 @@ class SimplefeedbackServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         $this->publishes([
             __DIR__.'/../config/simplefeedback.php' => config_path('simplefeedback.php'),
-        ], 'simplefeedback.config');
+        ], 'simplefeedback-config');
 
         // Publishing the migrations.
-        /*if (! class_exists('CreateSimplefeedbackTable')) {
+        if (! class_exists('CreateSimplefeedbackTable')) {
             $this->publishes([
             __DIR__ . '/../database/migrations/create_simplefeedback_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_simplefeedback_table.php'),
             // you can add any number of migrations here
-            ], 'migrations');
-        }*/
+            ], 'simplefeedback-migrations');
+        }
 
         // Publishing the views.
         /*$this->publishes([

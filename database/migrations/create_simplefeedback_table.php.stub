@@ -8,15 +8,19 @@ return new class extends Migration
 {
     public function up()
     {
-        /*Schema::create('simplefeedbacks', function (Blueprint $table) {
+        /*Schema::create('simple_feedbacks', function (Blueprint $table) {
             $table->id();
-            // other fields
+            $table->string('type')->default('bug');
+            $table->string('title');
+            $table->text('body')->nullable();
+            $table->string('screenshot')->nullable();
+            $table->json('data')->nullable();
             $table->timestamps();
         });*/
     }
 
     public function down()
     {
-        /*Schema::dropIfExists('simplefeedbacks');*/
+        /*Schema::dropIfExists('simple_feedbacks');*/
     }
 };
