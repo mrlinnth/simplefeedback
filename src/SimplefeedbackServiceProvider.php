@@ -70,14 +70,14 @@ class SimplefeedbackServiceProvider extends ServiceProvider
         }
 
         // Publishing the views.
-        /*$this->publishes([
+        $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/mrlinnth'),
-        ], 'simplefeedback.views');*/
+        ], 'simplefeedback.views');
 
         // Publishing view components.
-        // $this->publishes([
-        //     __DIR__.'/../src/Components/' => app_path('View/Components'),
-        // ], 'simplefeedback.view-components');
+        $this->publishes([
+            __DIR__.'/Components/' => app_path('View/Components'),
+        ], 'simplefeedback.view-components');
 
         // Publishing assets.
         /*$this->publishes([
