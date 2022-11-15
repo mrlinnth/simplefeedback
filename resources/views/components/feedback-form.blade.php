@@ -1,5 +1,12 @@
 <!-- feedbacks.form component from mrlinnth/simplefeedback -->
 <div>
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
     <form method="POST" action="{{ route('simplefeedbacks.store') }}">
         @csrf
         @php
@@ -14,6 +21,12 @@
             ];
         @endphp
         <input type="hidden" name="data" value="{{ json_encode($data) }}">
+        <label for="type">Type</label><br>
+        <select name="type" id="type">
+            <option value="bug">Bug</option>
+            <option value="enhancement">Request</option>
+            <option value="question">Question</option>
+        </select><br>
         <label for="title">Title</label><br>
         <input type="text" id="title" name="title"><br>
         <label for="body">Description</label><br>

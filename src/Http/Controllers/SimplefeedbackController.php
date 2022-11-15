@@ -10,8 +10,13 @@ class SimplefeedbackController
 {
     public function __invoke()
     {
+        request()->validate([
+            'title' => 'required',
+        ]);
+
         if (config('simplefeedback.database')) {
             $this->createFeedback(
+                request()->type,
                 request()->title,
                 request()->body,
                 request()->data
@@ -20,6 +25,7 @@ class SimplefeedbackController
 
         if (config('simplefeedback.github.enable')) {
             $this->createIssue(
+                request()->type,
                 request()->title,
                 request()->body,
                 request()->data
@@ -29,22 +35,24 @@ class SimplefeedbackController
         return redirect()->back();
     }
 
-    protected function createFeedback(string $title, string $body, string $data): void
+    protected function createFeedback(string $type, string $title, ?string $body, string $data): void
     {
         Feedback::create([
             'title' => $title,
             'body' => $body,
+            'type' => $type,
             'data' => json_decode($data),
         ]);
     }
 
-    protected function createIssue(string $title, string $body, string $data): void
+    protected function createIssue(string $type, string $title, ?string $body, string $data): void
     {
-        $data = "```json\n{$data}\n```";
+        $body = "{$body}\n";
+        $body .= "```json\n{$data}\n```";
 
         $issueData = [
             'title' => $title,
-            'body' => $body . "\n" . $data
+            'body' => $body
         ];
 
         $issue = GitHub::issues()->create(
@@ -58,7 +66,7 @@ class SimplefeedbackController
             config('simplefeedback.github.owner'),
             config('simplefeedback.github.repo'),
             $issue['number'],
-            FeedbackType::bug->value,
+            $type,
         );
     }
 }
