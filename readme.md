@@ -18,9 +18,9 @@ composer require mrlinnth/simplefeedback
 
 1. After installation, publish the package files.
 
-```bash
-php artisan vendor:publish --provider="Mrlinnth\Simplefeedback\SimplefeedbackServiceProvider"
-```
+   ```bash
+   php artisan vendor:publish --provider="Mrlinnth\Simplefeedback\SimplefeedbackServiceProvider"
+   ```
 
 1. Update the published `feedback-form.blade.php` blade component with your desired css classes/styles.
 

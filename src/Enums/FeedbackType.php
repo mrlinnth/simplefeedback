@@ -1,8 +1,10 @@
 <?php
 
+namespace Mrlinnth\Simplefeedback\Enums;
+
 enum FeedbackType: string
 {
     case bug = 'bug';
-    case request = 'request';
-    case other = 'other';
+    case enhancement = 'enhancement';
+    case question = 'question';
 }

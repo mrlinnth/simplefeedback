@@ -1,41 +1,45 @@
 {
-    "name": "mrlinnth/simplefeedback",
-    "description": "Collect visitors or users feedback for Laravel project and save them to database or create GitHub issues.",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Yan",
-            "email": "hiyan.xyz@gmail.com",
-            "homepage": "http://hiyan.xyz"
-        }
-    ],
-    "homepage": "https://github.com/mrlinnth/simplefeedback",
-    "keywords": ["Laravel", "Simplefeedback"],
-    "require": {
-        "illuminate/support": "~9"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~9.0",
-        "orchestra/testbench": "~7"
-    },
-    "autoload": {
-        "psr-4": {
-            "Mrlinnth\\Simplefeedback\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Mrlinnth\\Simplefeedback\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Mrlinnth\\Simplefeedback\\SimplefeedbackServiceProvider"
-            ],
-            "aliases": {
-                "Simplefeedback": "Mrlinnth\\Simplefeedback\\Facades\\Simplefeedback"
-            }
-        }
+  "name": "mrlinnth/simplefeedback",
+  "description": "Collect visitors or users feedback for Laravel project and save them to database or create GitHub issues.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Yan",
+      "email": "hiyan.xyz@gmail.com",
+      "homepage": "http://hiyan.xyz"
     }
+  ],
+  "homepage": "https://github.com/mrlinnth/simplefeedback",
+  "keywords": [
+    "Laravel",
+    "Simplefeedback"
+  ],
+  "require": {
+    "illuminate/support": "~9",
+    "graham-campbell/github": "^11.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~9.0",
+    "orchestra/testbench": "~7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mrlinnth\\Simplefeedback\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mrlinnth\\Simplefeedback\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mrlinnth\\Simplefeedback\\SimplefeedbackServiceProvider"
+      ],
+      "aliases": {
+        "Simplefeedback": "Mrlinnth\\Simplefeedback\\Facades\\Simplefeedback"
+      }
+    }
+  }
 }

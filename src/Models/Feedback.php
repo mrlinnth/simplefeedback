@@ -2,9 +2,9 @@
 
 namespace Mrlinnth\Simplefeedback\Models;
 
-use FeedbackType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Mrlinnth\Simplefeedback\Enums\FeedbackType;
 
 class Feedback extends Model
 {
