@@ -42,10 +42,14 @@ Publish config file
 php artisan vendor:publish --provider="GrahamCampbell\GitHub\GitHubServiceProvider"
 ```
 
-Update `.env` file
+> Use env variable instead of placing the token and secrets directly in the `config/github.php` file.
+
+Example `.env` file
 
 ```bash
 GITHUB_TOKEN="YOUR-TOKEN"
+
+# owner and repo are for config/simplefeedback.php
 GITHUB_OWNER="YOUR-REPO-OWNER"
 GITHUB_REPO="YOUR-REPO-NAME"
 ```
@@ -53,7 +57,6 @@ GITHUB_REPO="YOUR-REPO-NAME"
 ## To Do
 
 - [ ] Screenshot of current page to save with issue
-- [ ] Filament resource
 - [ ] Redirect route in config
 - [ ] Feedback types in config
 - [ ] Table name in config
@@ -87,14 +90,3 @@ If you discover any security related issues, please create an issue.
 ## License
 
 MIT. Please see the [license file](license.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/mrlinnth/simplefeedback.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/mrlinnth/simplefeedback.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/mrlinnth/simplefeedback/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
-[link-packagist]: https://packagist.org/packages/mrlinnth/simplefeedback
-[link-downloads]: https://packagist.org/packages/mrlinnth/simplefeedback
-[link-travis]: https://travis-ci.org/mrlinnth/simplefeedback
-[link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/mrlinnth
-[link-contributors]: ../../contributors

@@ -7,7 +7,7 @@
             @endforeach
         </ul>
     @endif
-    <form method="POST" action="{{ route('simplefeedbacks.store') }}">
+    <form method="POST" action="{{ route('simplefeedbacks.store') }}" enctype="multipart/form-data">
         @csrf
         @php
             $data = [
@@ -31,6 +31,8 @@
         <input type="text" id="title" name="title"><br>
         <label for="body">Description</label><br>
         <textarea id="body" name="body"></textarea><br>
+        <label for="screenshot">Screenshot</label><br>
+        <input type="file" id="screenshot" name="screenshot" accept="image/*, video/*"><br>
         <input type="submit" value="Submit">
     </form>
 </div>

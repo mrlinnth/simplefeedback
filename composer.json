@@ -11,8 +11,10 @@
   ],
   "homepage": "https://github.com/mrlinnth/simplefeedback",
   "keywords": [
-    "Laravel",
-    "Simplefeedback"
+    "laravel",
+    "simple-feedback",
+    "feedback",
+    "filament-feedback"
   ],
   "require": {
     "illuminate/support": "~9",
