@@ -99,12 +99,12 @@ class SimplefeedbackController
         return $file->storeAs(
             'screenshots',
             $filename . "." . $file->getClientOriginalExtension(),
-            'public'
+            config('filesystems.default', 'public')
         );
     }
 
     protected function deleteFile($path): void
     {
-        Storage::disk('public')->delete($path);
+        Storage::disk(config('filesystems.default', 'public'))->delete($path);
     }
 }
