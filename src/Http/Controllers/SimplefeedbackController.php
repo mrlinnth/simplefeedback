@@ -59,13 +59,16 @@ class SimplefeedbackController
     protected function createIssue(string $type, string $title, ?string $body, string $data, string $screenshotPath): void
     {
         $body = "{$body}\n";
-        $body .= "### Meta Data";
+        $body .= "### Meta Data\n";
         $body .= "```json\n{$data}\n```";
 
         if ($screenshotPath !== null) {
             $screenshotUrl = Storage::url($screenshotPath);
+            if (config('filesystems.default') === 'local') {
+                $screenshotUrl = asset($screenshotUrl);
+            }
             $body .= "\n";
-            $body .= "### Screenshot";
+            $body .= "### Screenshot\n";
             $body .= "![{$title}]({$screenshotUrl})";
             $body .= "\n";
         }
